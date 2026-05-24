@@ -372,27 +372,46 @@ footer { padding: 32px 48px; background: #1a1a1a; color: rgba(244,241,234,0.6); 
   <div class="projects-grid">
     <article class="project featured">
       <div class="project-num">01</div>
+      <div class="project-tag">Chrome Extension · Production</div>
+      <h3 class="project-title"><em>HaulyDesk</em> — air freight compliance toolkit</h3>
+      <p class="project-desc">A Chrome extension built for air freight forwarders to handle pre-shipment checks and quick reference lookups directly from the browser. Replaces the need to juggle IATA manuals, government portals, and spreadsheets. Features dangerous goods classification, route compliance, HSN code lookup, and day-to-day air cargo decisions at your fingertips.</p>
+      <div class="project-stack"><span>Vanilla JavaScript</span><span>Chrome Manifest V3</span><span>HTML/CSS</span><span>Air Cargo Reference</span></div>
+    </article>
+
+    <article class="project featured">
+      <div class="project-num">02</div>
+      <div class="project-tag">Chrome Extension · Production</div>
+      <h3 class="project-title"><em>Shiplyzer</em> — ocean freight reference suite</h3>
+      <p class="project-desc">A comprehensive container-and-logistics reference tool built as a Chrome extension for ocean freight professionals. Includes: Container Matcher (cargo dimensions → ranked container recommendations), ICD/CFS Finder for India (nearest depot locations with distances), Incoterms 2020 guide, container spec library, unit converter, and optional AI recommendations powered by OpenAI. Haversine-based distance calculations over 40+ ICDs and 80+ Indian cities.</p>
+      <div class="project-stack"><span>JavaScript</span><span>Chrome Extension</span><span>Haversine Algorithm</span><span>OpenAI API</span><span>HTML/CSS</span><span>Logistics Data</span></div>
+    </article>
+
+    <article class="project featured">
+      <div class="project-num">03</div>
       <div class="project-tag">Automation · Production</div>
       <h3 class="project-title">Email-to-Sheet purchase order <em>extraction pipeline</em></h3>
       <p class="project-desc">An n8n workflow that listens to the operations inbox, sends each purchase order through GPT for structured extraction (supplier, PO number, line items, quantities, prices, dates), runs validation in JavaScript, and writes clean rows into Google Sheets. Replaces hours of manual copy-paste with a self-running pipeline — and feeds the cost analysis and BI layers downstream.</p>
       <div class="project-stack"><span>n8n</span><span>OpenAI GPT</span><span>JavaScript</span><span>Gmail API</span><span>Google Sheets</span></div>
     </article>
+
     <article class="project">
-      <div class="project-num">02</div>
+      <div class="project-num">04</div>
       <div class="project-tag">Automation</div>
       <h3 class="project-title">Email-driven data ingestion workflow</h3>
       <p class="project-desc">A lightweight automation that reads incoming operational emails, extracts the fields that matter, and pushes them straight into Google Sheets. The system that replaces "checking email and typing into Excel" with a workflow that just runs.</p>
       <div class="project-stack"><span>n8n</span><span>Gmail</span><span>Google Sheets</span></div>
     </article>
+
     <article class="project">
-      <div class="project-num">03</div>
+      <div class="project-num">05</div>
       <div class="project-tag">Optimisation</div>
       <h3 class="project-title">Variable Neighborhood Descent for the TSP</h3>
       <p class="project-desc">Implementation of OrOpt, TwoOpt and ThreeOpt heuristics for the Traveling Salesman Problem. Compared six neighborhood orderings on TSPLIB instances (eil51, eil101, d198, kroA100, ch150). Reported solution quality and runtime, visualised through boxplots and bar charts.</p>
       <div class="project-stack"><span>Python</span><span>Combinatorial Optimisation</span><span>TSPLIB</span></div>
     </article>
+
     <article class="project">
-      <div class="project-num">04</div>
+      <div class="project-num">06</div>
       <div class="project-tag">Data Analysis</div>
       <h3 class="project-title">Flight delay analysis with R</h3>
       <p class="project-desc">Exploratory and bivariate analysis on the nycflights13 dataset. Built a regression model linking departure and arrival delays, and assembled a ggplot2 dashboard for airline comparisons.</p>
