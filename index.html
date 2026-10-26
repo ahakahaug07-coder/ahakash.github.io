@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +10,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
 @media (prefers-color-scheme: dark) {
   :root { color-scheme: light !important; }
 }
+
 :root {
   color-scheme: light;
   --bg: #f4f1ea;
@@ -28,8 +31,14 @@
   --sans: 'Inter Tight', -apple-system, sans-serif;
   --mono: 'JetBrains Mono', monospace;
 }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; background: #f4f1ea; }
+
+html {
+  scroll-behavior: smooth;
+  background: #f4f1ea;
+}
+
 body {
   background: #f4f1ea;
   color: #1a1a1a;
@@ -40,171 +49,1158 @@ body {
   background-image: radial-gradient(circle at 1px 1px, rgba(26,26,26,0.04) 1px, transparent 0);
   background-size: 24px 24px;
 }
-.ticker-bar { background: #1a1a1a; color: #f4f1ea; padding: 10px 0; overflow: hidden; border-bottom: 1px solid #1a1a1a; position: relative; z-index: 100; }
-.ticker-track { display: flex; white-space: nowrap; animation: scroll 40s linear infinite; font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; }
-.ticker-track span { padding: 0 32px; display: inline-flex; align-items: center; gap: 12px; }
-.ticker-track span::after { content: '✦'; color: var(--accent); margin-left: 32px; }
-@keyframes scroll { to { transform: translateX(-50%); } }
-nav { position: sticky; top: 0; background: rgba(244,241,234,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); z-index: 90; padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; }
-.logo { font-family: var(--serif); font-size: 18px; font-weight: 600; letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px; color: #1a1a1a; }
-.logo-mark { width: 28px; height: 28px; border: 1.5px solid #1a1a1a; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 11px; font-weight: 600; background: var(--paper); color: #1a1a1a; }
-.nav-links { display: flex; gap: 36px; list-style: none; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; counter-reset: nav; }
-.nav-links li { counter-increment: nav; }
-.nav-links a { color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover { color: var(--accent); }
-.nav-links a::before { content: counter(nav, decimal-leading-zero) ' / '; color: var(--muted); font-size: 10px; }
-.hero { padding: 100px 48px 80px; max-width: 1400px; margin: 0 auto; position: relative; }
-.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
-.hero-meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; display: flex; gap: 24px; flex-wrap: wrap; }
-.hero-meta span::before { content: '◆'; color: var(--accent); margin-right: 8px; font-size: 9px; }
-h1.hero-title { font-family: var(--serif); font-size: clamp(56px, 9vw, 132px); line-height: 0.92; font-weight: 400; letter-spacing: -0.04em; margin-bottom: 32px; font-variation-settings: "SOFT" 50; color: #1a1a1a; }
-h1.hero-title em { font-style: italic; color: var(--accent); font-weight: 300; }
-.hero-tagline { font-family: var(--serif); font-size: 22px; font-style: italic; font-weight: 400; color: var(--ink-soft); max-width: 480px; line-height: 1.45; }
-.hero-side { border-left: 1px solid var(--line); padding-left: 32px; font-size: 14px; line-height: 1.7; color: var(--ink-soft); }
-.hero-side .label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; display: block; }
-.hero-side p { margin-bottom: 24px; }
-.hero-side strong { color: #1a1a1a; }
-.coords { position: absolute; bottom: 80px; right: 48px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: var(--muted); text-align: right; line-height: 1.8; }
-.coords::before { content: ''; display: block; width: 40px; height: 1px; background: var(--accent); margin-bottom: 8px; margin-left: auto; }
-.stamp { position: absolute; top: 60px; right: 60px; width: 140px; height: 140px; border: 2px solid var(--stamp); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--stamp); transform: rotate(-12deg); opacity: 0.85; font-family: var(--mono); text-align: center; padding: 10px; }
-.stamp-inner { border: 1px dashed var(--stamp); border-radius: 50%; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px; }
-.stamp-text-large { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1; font-weight: 600; }
-.stamp-text-small { font-size: 8px; letter-spacing: 0.2em; margin-top: 4px; }
-.stamp-text-tiny { font-size: 7px; letter-spacing: 0.15em; margin-top: 2px; opacity: 0.7; }
-section { padding: 120px 48px; max-width: 1400px; margin: 0 auto; position: relative; }
-.section-header { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; margin-bottom: 80px; align-items: baseline; border-top: 1px solid #1a1a1a; padding-top: 32px; }
-.section-num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-.section-num strong { color: #1a1a1a; font-weight: 500; }
-.section-title { font-family: var(--serif); font-size: clamp(36px, 5vw, 64px); line-height: 1.0; font-weight: 400; letter-spacing: -0.025em; color: #1a1a1a; }
-.section-title em { font-style: italic; color: var(--accent); }
-.about-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; }
-.about-text { font-family: var(--serif); font-size: 22px; line-height: 1.55; font-weight: 400; color: #1a1a1a; font-variation-settings: "SOFT" 30; }
-.about-text p { margin-bottom: 28px; }
-.about-text p:first-child::first-letter { font-family: var(--serif); font-size: 64px; font-weight: 600; float: left; line-height: 0.85; margin-right: 10px; margin-top: 6px; color: var(--accent); font-style: italic; }
-.about-text em { color: var(--accent); font-style: italic; }
-.about-facts { border-left: 1px solid var(--line); padding-left: 32px; }
-.fact { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px dashed var(--line); }
-.fact:last-child { border-bottom: none; }
-.fact-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
-.fact-value { font-family: var(--serif); font-size: 18px; font-weight: 500; line-height: 1.3; color: #1a1a1a; }
-.fact-value em { color: var(--accent); font-style: italic; }
-.experience-list { display: flex; flex-direction: column; gap: 32px; }
-.boarding-pass { background: var(--paper); border: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1.5fr 1fr; position: relative; transition: transform 0.4s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.4s; overflow: hidden; color: #1a1a1a; }
-.boarding-pass:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -16px rgba(26,26,26,0.15); }
-.boarding-pass::before, .boarding-pass::after { content: ''; position: absolute; width: 24px; height: 24px; background: #f4f1ea; border-radius: 50%; top: 50%; transform: translateY(-50%); }
-.boarding-pass::before { left: -12px; }
-.boarding-pass::after { right: 33.33%; transform: translate(50%, -50%); }
-.bp-section { padding: 32px 36px; border-right: 1px dashed var(--line); }
-.bp-section:last-child { border-right: none; }
-.bp-section .label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; display: block; }
-.bp-role { font-family: var(--serif); font-size: 28px; font-weight: 500; line-height: 1.1; margin-bottom: 8px; letter-spacing: -0.015em; color: #1a1a1a; }
-.bp-company { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
-.bp-route { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; font-family: var(--mono); font-size: 11px; color: var(--muted); }
-.bp-route .arrow { flex: 1; height: 1px; background: var(--line); margin: 0 16px; position: relative; }
-.bp-route .arrow::after { content: '✈'; position: absolute; right: -2px; top: 50%; transform: translateY(-50%); background: var(--paper); padding: 0 4px; color: var(--accent); }
-.bp-details ul { list-style: none; padding: 0; }
-.bp-details li { font-size: 13px; line-height: 1.55; color: var(--ink-soft); padding: 6px 0; padding-left: 18px; position: relative; border-bottom: 1px dotted var(--line); }
-.bp-details li:last-child { border-bottom: none; }
-.bp-details li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 500; }
-.bp-side { background: linear-gradient(135deg, var(--bg-deep) 0%, #f4f1ea 100%); display: flex; flex-direction: column; justify-content: space-between; }
-.bp-status { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--accent); margin-top: 8px; }
-.bp-barcode { margin-top: 16px; height: 32px; background-image: repeating-linear-gradient(90deg, #1a1a1a 0, #1a1a1a 1px, transparent 1px, transparent 3px, #1a1a1a 3px, #1a1a1a 5px, transparent 5px, transparent 6px, #1a1a1a 6px, #1a1a1a 8px, transparent 8px, transparent 11px); opacity: 0.85; }
-.projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
-.project { background: var(--paper); border: 1px solid var(--line); padding: 40px; position: relative; transition: all 0.4s cubic-bezier(0.2,0.8,0.2,1); overflow: hidden; color: #1a1a1a; }
-.project:hover { border-color: var(--accent); transform: translateY(-4px); }
-.project:hover .project-num { color: var(--accent); transform: scale(1.05); }
-.project-num { font-family: var(--serif); font-size: 80px; font-weight: 300; line-height: 1; color: var(--line); position: absolute; top: 20px; right: 32px; font-style: italic; transition: all 0.4s; }
-.project-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; display: inline-block; padding: 4px 10px; border: 1px solid var(--line); border-radius: 100px; background: #f4f1ea; }
-.project-title { font-family: var(--serif); font-size: 28px; font-weight: 500; line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.015em; max-width: 80%; color: #1a1a1a; }
-.project-title em { font-style: italic; color: var(--accent); }
-.project-desc { font-size: 14px; line-height: 1.65; color: var(--ink-soft); margin-bottom: 24px; }
-.project-stack { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
-.project-stack span { padding: 4px 10px; background: var(--bg-deep); color: var(--ink-soft); border-radius: 2px; }
-.project.featured { grid-column: span 2; background: #1a1a1a; color: #f4f1ea; border-color: #1a1a1a; }
-.project.featured .project-tag { border-color: rgba(244,241,234,0.2); color: #f4f1ea; background: transparent; }
-.project.featured .project-num { color: rgba(244,241,234,0.15); }
-.project.featured:hover .project-num { color: var(--accent); }
-.project.featured .project-title { font-size: 40px; max-width: 70%; color: #f4f1ea; }
-.project.featured .project-desc { color: rgba(244,241,234,0.8); font-size: 16px; max-width: 75%; }
-.project.featured .project-stack span { background: rgba(244,241,234,0.1); color: #f4f1ea; }
-.project.featured em { color: var(--accent); font-style: italic; }
-.thesis { background: #1a1a1a; color: #f4f1ea; padding: 80px; position: relative; overflow: hidden; }
-.thesis::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; border: 1px solid rgba(244,241,234,0.1); }
-.thesis::after { content: ''; position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; border-radius: 50%; border: 1px solid rgba(244,241,234,0.08); }
-.thesis-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; position: relative; z-index: 2; }
-.thesis-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(244,241,234,0.5); margin-bottom: 32px; }
-.thesis-title { font-family: var(--serif); font-size: 48px; font-weight: 400; line-height: 1.05; letter-spacing: -0.025em; margin-bottom: 24px; color: #f4f1ea; }
-.thesis-title em { font-style: italic; color: var(--accent); }
-.thesis-host { font-family: var(--mono); font-size: 13px; color: rgba(244,241,234,0.6); letter-spacing: 0.1em; padding-top: 24px; border-top: 1px solid rgba(244,241,234,0.15); }
-.thesis-host strong { color: #f4f1ea; }
-.thesis-missions { display: flex; flex-direction: column; gap: 28px; }
-.mission { padding: 24px 0; border-bottom: 1px solid rgba(244,241,234,0.12); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: start; }
-.mission:last-child { border-bottom: none; }
-.mission-num { font-family: var(--serif); font-size: 32px; font-style: italic; color: var(--accent); line-height: 1; }
-.mission-title { font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 8px; line-height: 1.25; color: #f4f1ea; }
-.mission-desc { font-size: 14px; line-height: 1.6; color: rgba(244,241,234,0.7); }
-.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
-.skill-group h3 { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; gap: 12px; }
-.skill-group h3::before { content: ''; width: 6px; height: 6px; background: var(--accent); display: inline-block; }
-.skill-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-.skill-list li { font-family: var(--serif); font-size: 22px; font-weight: 400; line-height: 1.3; letter-spacing: -0.01em; padding: 6px 0; color: #1a1a1a; display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px dashed var(--line); transition: color 0.2s; }
-.skill-list li:hover { color: var(--accent); }
-.skill-list li:last-child { border-bottom: none; }
-.skill-list .level { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--muted); }
-.languages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--line); }
-.lang-card { text-align: center; padding: 24px; background: var(--paper); border: 1px solid var(--line); }
-.lang-flag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: var(--muted); margin-bottom: 8px; }
-.lang-name { font-family: var(--serif); font-size: 24px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 8px; color: #1a1a1a; }
-.lang-level { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.1em; font-weight: 500; }
-.contact { background: var(--bg-deep); margin-top: 80px; padding: 120px 48px; border-top: 1px solid var(--line); position: relative; }
-.contact-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
-.contact-title { font-family: var(--serif); font-size: clamp(48px, 7vw, 96px); line-height: 0.95; font-weight: 400; letter-spacing: -0.03em; font-variation-settings: "SOFT" 50; color: #1a1a1a; }
-.contact-title em { font-style: italic; color: var(--accent); }
-.contact-details { display: flex; flex-direction: column; gap: 24px; }
-.contact-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
-.contact-row .key { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-.contact-row .val { font-family: var(--serif); font-size: 20px; color: #1a1a1a; font-weight: 500; }
-.contact-row .val a { color: #1a1a1a; text-decoration: none; border-bottom: 1px solid var(--line); transition: all 0.2s; }
-.contact-row .val a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-footer { padding: 32px 48px; background: #1a1a1a; color: rgba(244,241,234,0.6); font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-@media (max-width: 900px) {
-  nav { padding: 16px 24px; } .nav-links { gap: 18px; font-size: 10px; }
-  .hero { padding: 60px 24px; } .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-  section { padding: 80px 24px; } .section-header { grid-template-columns: 1fr; gap: 24px; }
-  .about-content { grid-template-columns: 1fr; gap: 40px; }
-  .boarding-pass { grid-template-columns: 1fr; } .boarding-pass::after { display: none; }
-  .bp-section { border-right: none; border-bottom: 1px dashed var(--line); }
-  .projects-grid { grid-template-columns: 1fr; }
-  .project.featured { grid-column: span 1; } .project.featured .project-title { font-size: 28px; max-width: 100%; } .project.featured .project-desc { max-width: 100%; }
-  .thesis { padding: 60px 24px; } .thesis-grid { grid-template-columns: 1fr; gap: 40px; } .thesis-title { font-size: 32px; }
-  .skills-grid { grid-template-columns: 1fr; gap: 32px; }
-  .languages { grid-template-columns: repeat(2, 1fr); }
-  .contact { padding: 80px 24px; } .contact-inner { grid-template-columns: 1fr; gap: 48px; }
-  .stamp { width: 90px; height: 90px; top: 20px; right: 20px; } .stamp-text-large { font-size: 14px; }
-  .coords { display: none; } footer { padding: 24px; }
+
+.ticker-bar {
+  background: #1a1a1a;
+  color: #f4f1ea;
+  padding: 10px 0;
+  overflow: hidden;
+  border-bottom: 1px solid #1a1a1a;
+  position: relative;
+  z-index: 100;
 }
-::selection { background: var(--accent); color: var(--paper); }
+
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll 40s linear infinite;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.ticker-track span {
+  padding: 0 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ticker-track span::after {
+  content: '✦';
+  color: var(--accent);
+  margin-left: 32px;
+}
+
+@keyframes scroll {
+  to { transform: translateX(-50%); }
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(244,241,234,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  z-index: 90;
+  padding: 18px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1a1a1a;
+}
+
+.logo-mark {
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--paper);
+  color: #1a1a1a;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  counter-reset: nav;
+}
+
+.nav-links li {
+  counter-increment: nav;
+}
+
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a::before {
+  content: counter(nav, decimal-leading-zero) ' / ';
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.hero {
+  padding: 100px 48px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+
+.hero-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 32px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-meta span::before {
+  content: '◆';
+  color: var(--accent);
+  margin-right: 8px;
+  font-size: 9px;
+}
+
+h1.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(56px, 9vw, 132px);
+  line-height: 0.92;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  margin-bottom: 32px;
+  font-variation-settings: "SOFT" 50;
+  color: #1a1a1a;
+}
+
+h1.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 300;
+}
+
+.hero-tagline {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-soft);
+  max-width: 480px;
+  line-height: 1.45;
+}
+
+.hero-side {
+  border-left: 1px solid var(--line);
+  padding-left: 32px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.hero-side .label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.hero-side p {
+  margin-bottom: 24px;
+}
+
+.hero-side strong {
+  color: #1a1a1a;
+}
+
+.coords {
+  position: absolute;
+  bottom: 80px;
+  right: 48px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-align: right;
+  line-height: 1.8;
+}
+
+.coords::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+  margin-bottom: 8px;
+  margin-left: auto;
+}
+
+.stamp {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  width: 140px;
+  height: 140px;
+  border: 2px solid var(--stamp);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--stamp);
+  transform: rotate(-12deg);
+  opacity: 0.85;
+  font-family: var(--mono);
+  text-align: center;
+  padding: 10px;
+}
+
+.stamp-inner {
+  border: 1px dashed var(--stamp);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.stamp-text-large {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.stamp-text-small {
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  margin-top: 4px;
+}
+
+.stamp-text-tiny {
+  font-size: 7px;
+  letter-spacing: 0.15em;
+  margin-top: 2px;
+  opacity: 0.7;
+}
+
+section {
+  padding: 120px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  margin-bottom: 80px;
+  align-items: baseline;
+  border-top: 1px solid #1a1a1a;
+  padding-top: 32px;
+}
+
+.section-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section-num strong {
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.0;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: #1a1a1a;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 80px;
+}
+
+.about-text {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.55;
+  font-weight: 400;
+  color: #1a1a1a;
+  font-variation-settings: "SOFT" 30;
+}
+
+.about-text p {
+  margin-bottom: 28px;
+}
+
+.about-text p:first-child::first-letter {
+  font-family: var(--serif);
+  font-size: 64px;
+  font-weight: 600;
+  float: left;
+  line-height: 0.85;
+  margin-right: 10px;
+  margin-top: 6px;
+  color: var(--accent);
+  font-style: italic;
+}
+
+.about-text em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.about-facts {
+  border-left: 1px solid var(--line);
+  padding-left: 32px;
+}
+
+.fact {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.fact:last-child {
+  border-bottom: none;
+}
+
+.fact-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.fact-value {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #1a1a1a;
+}
+
+.fact-value em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.boarding-pass {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.4s;
+  overflow: hidden;
+  color: #1a1a1a;
+}
+
+.boarding-pass:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -16px rgba(26,26,26,0.15);
+}
+
+.boarding-pass::before,
+.boarding-pass::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: #f4f1ea;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.boarding-pass::before {
+  left: -12px;
+}
+
+.boarding-pass::after {
+  right: 33.33%;
+  transform: translate(50%, -50%);
+}
+
+.bp-section {
+  padding: 32px 36px;
+  border-right: 1px dashed var(--line);
+}
+
+.bp-section:last-child {
+  border-right: none;
+}
+
+.bp-section .label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.bp-role {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  letter-spacing: -0.015em;
+  color: #1a1a1a;
+}
+
+.bp-company {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.bp-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.bp-route .arrow {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+  margin: 0 16px;
+  position: relative;
+}
+
+.bp-route .arrow::after {
+  content: '✈';
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--paper);
+  padding: 0 4px;
+  color: var(--accent);
+}
+
+.bp-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bp-details li {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  padding: 6px 0;
+  padding-left: 18px;
+  position: relative;
+  border-bottom: 1px dotted var(--line);
+}
+
+.bp-details li:last-child {
+  border-bottom: none;
+}
+
+.bp-details li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.bp-side {
+  background: linear-gradient(135deg, var(--bg-deep) 0%, #f4f1ea 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bp-status {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--accent);
+  margin-top: 8px;
+}
+
+.bp-barcode {
+  margin-top: 16px;
+  height: 32px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #1a1a1a 0,
+    #1a1a1a 1px,
+    transparent 1px,
+    transparent 3px,
+    #1a1a1a 3px,
+    #1a1a1a 5px,
+    transparent 5px,
+    transparent 6px,
+    #1a1a1a 6px,
+    #1a1a1a 8px,
+    transparent 8px,
+    transparent 11px
+  );
+  opacity: 0.85;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.project {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 40px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.2,0.8,0.2,1);
+  overflow: hidden;
+  color: #1a1a1a;
+}
+
+.project:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.project:hover .project-num {
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+.project-num {
+  font-family: var(--serif);
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--line);
+  position: absolute;
+  top: 20px;
+  right: 32px;
+  font-style: italic;
+  transition: all 0.4s;
+}
+
+.project-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  background: #f4f1ea;
+}
+
+.project-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.015em;
+  max-width: 80%;
+  color: #1a1a1a;
+}
+
+.project-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.project-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-stack span {
+  padding: 4px 10px;
+  background: var(--bg-deep);
+  color: var(--ink-soft);
+  border-radius: 2px;
+}
+
+.project.featured {
+  grid-column: span 2;
+  background: #1a1a1a;
+  color: #f4f1ea;
+  border-color: #1a1a1a;
+}
+
+.project.featured .project-tag {
+  border-color: rgba(244,241,234,0.2);
+  color: #f4f1ea;
+  background: transparent;
+}
+
+.project.featured .project-num {
+  color: rgba(244,241,234,0.15);
+}
+
+.project.featured:hover .project-num {
+  color: var(--accent);
+}
+
+.project.featured .project-title {
+  font-size: 40px;
+  max-width: 70%;
+  color: #f4f1ea;
+}
+
+.project.featured .project-desc {
+  color: rgba(244,241,234,0.8);
+  font-size: 16px;
+  max-width: 75%;
+}
+
+.project.featured .project-stack span {
+  background: rgba(244,241,234,0.1);
+  color: #f4f1ea;
+}
+
+.project.featured em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.thesis {
+  background: #1a1a1a;
+  color: #f4f1ea;
+  padding: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.thesis::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 1px solid rgba(244,241,234,0.1);
+}
+
+.thesis::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid rgba(244,241,234,0.08);
+}
+
+.thesis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.thesis-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(244,241,234,0.5);
+  margin-bottom: 32px;
+}
+
+.thesis-title {
+  font-family: var(--serif);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+  color: #f4f1ea;
+}
+
+.thesis-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.thesis-host {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: rgba(244,241,234,0.6);
+  letter-spacing: 0.1em;
+  padding-top: 24px;
+  border-top: 1px solid rgba(244,241,234,0.15);
+}
+
+.thesis-host strong {
+  color: #f4f1ea;
+}
+
+.thesis-missions {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.mission {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(244,241,234,0.12);
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.mission:last-child {
+  border-bottom: none;
+}
+
+.mission-num {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.mission-title {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  line-height: 1.25;
+  color: #f4f1ea;
+}
+
+.mission-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(244,241,234,0.7);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.skill-group h3 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skill-group h3::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.skill-list li {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  padding: 6px 0;
+  color: #1a1a1a;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--line);
+  transition: color 0.2s;
+}
+
+.skill-list li:hover {
+  color: var(--accent);
+}
+
+.skill-list li:last-child {
+  border-bottom: none;
+}
+
+.skill-list .level {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.languages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.lang-card {
+  text-align: center;
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.lang-flag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.lang-name {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.lang-level {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.contact {
+  background: var(--bg-deep);
+  margin-top: 80px;
+  padding: 120px 48px;
+  border-top: 1px solid var(--line);
+  position: relative;
+}
+
+.contact-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+
+.contact-title {
+  font-family: var(--serif);
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  font-variation-settings: "SOFT" 50;
+  color: #1a1a1a;
+}
+
+.contact-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+
+.contact-row .key {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-row .val {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.contact-row .val a {
+  color: #1a1a1a;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  transition: all 0.2s;
+}
+
+.contact-row .val a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+footer {
+  padding: 32px 48px;
+  background: #1a1a1a;
+  color: rgba(244,241,234,0.6);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding: 16px 24px;
+  }
+
+  .nav-links {
+    gap: 18px;
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 60px 24px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  section {
+    padding: 80px 24px;
+  }
+
+  .section-header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .boarding-pass {
+    grid-template-columns: 1fr;
+  }
+
+  .boarding-pass::after {
+    display: none;
+  }
+
+  .bp-section {
+    border-right: none;
+    border-bottom: 1px dashed var(--line);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project.featured {
+    grid-column: span 1;
+  }
+
+  .project.featured .project-title {
+    font-size: 28px;
+    max-width: 100%;
+  }
+
+  .project.featured .project-desc {
+    max-width: 100%;
+  }
+
+  .thesis {
+    padding: 60px 24px;
+  }
+
+  .thesis-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .thesis-title {
+    font-size: 32px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .languages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact {
+    padding: 80px 24px;
+  }
+
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .stamp {
+    width: 90px;
+    height: 90px;
+    top: 20px;
+    right: 20px;
+  }
+
+  .stamp-text-large {
+    font-size: 14px;
+  }
+
+  .coords {
+    display: none;
+  }
+
+  footer {
+    padding: 24px;
+  }
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
 </style>
 </head>
+
 <body>
 
 <div class="ticker-bar">
   <div class="ticker-track">
-    <span>Chennai, India</span>
-    <span>Freight Forwarding Analyst Intern</span>
+    <span>Munich, Germany</span>
+    <span>Freight Forwarding &amp; Analytics</span>
     <span>Aerotrans</span>
     <span>Expertise: Python · R · Power BI · n8n</span>
-    <span>Target: Munich, Germany (October 2026)</span>
-    <span>Chennai, India</span>
-    <span>Freight Forwarding Analyst Intern</span>
+    <span>Open to Logistics &amp; Supply Chain Roles</span>
+
+    <span>Munich, Germany</span>
+    <span>Freight Forwarding &amp; Analytics</span>
     <span>Aerotrans</span>
     <span>Expertise: Python · R · Power BI · n8n</span>
-    <span>Target: Munich, Germany (October 2026)</span>
+    <span>Open to Logistics &amp; Supply Chain Roles</span>
   </div>
 </div>
 
 <nav>
-  <div class="logo"><span class="logo-mark">A</span> Ahakash A. Raj</div>
+  <div class="logo">
+    <span class="logo-mark">A</span>
+    Ahakash A. Raj
+  </div>
+
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -216,303 +1212,922 @@ footer { padding: 32px 48px; background: #1a1a1a; color: rgba(244,241,234,0.6); 
 </nav>
 
 <header class="hero">
+
   <div class="stamp">
     <div class="stamp-inner">
-      <div class="stamp-text-tiny">★ ON DUTY ★</div>
+      <div class="stamp-text-tiny">★ COMPLETED ★</div>
       <div class="stamp-text-large">Aerotrans</div>
-      <div class="stamp-text-small">2026 · INTERN</div>
+      <div class="stamp-text-small">2026 · ALUMNUS</div>
     </div>
   </div>
+
   <div class="hero-grid">
+
     <div>
       <div class="hero-meta">
         <span>Portfolio · Vol. 01</span>
         <span>2026 Edition</span>
-        <span>Chennai — Munich</span>
+        <span>Based in Munich</span>
       </div>
-      <h1 class="hero-title">Moving cargo,<br>moving <em>data</em>,<br>moving on time.</h1>
-      <p class="hero-tagline">Supply chain operator turned analyst — building leaner, faster, more transparent logistics from the runway up.</p>
+
+      <h1 class="hero-title">
+        Moving cargo,<br>
+        moving <em>data</em>,<br>
+        moving on time.
+      </h1>
+
+      <p class="hero-tagline">
+        Supply chain operator turned analyst — building leaner, faster,
+        more transparent logistics from the runway up.
+      </p>
     </div>
+
     <aside class="hero-side">
       <span class="label">Dossier · 001</span>
-      <p>Master's student at <strong>IMT Atlantique</strong> specialising in the management and optimisation of supply chains and transport. Two years of front-line operations in time-critical airfreight before pivoting toward analytics and process automation.</p>
-      <p>Currently interning at <strong>Aerotrans</strong>, where I build automated data pipelines and decision-support tools for freight operations.</p>
+
+      <p>
+        IMT Atlantique master's graduate in production, logistics and procurement,
+        specialising in supply chain and transport optimisation. I combine hands-on
+        freight forwarding experience with analytics and automation.
+      </p>
+
+      <p>
+        Completed my internship at
+        <strong>Aerotrans Global Forwarding</strong>,
+        supporting air and sea freight pricing, operational reporting and automation
+        with Python, Power BI and n8n.
+      </p>
     </aside>
+
   </div>
-  <div class="coords">13.0827° N<br>80.2707° E<br>MAA — MUC</div>
+
+  <div class="coords">
+    48.1351° N<br>
+    11.5820° E<br>
+    MUC · GERMANY
+  </div>
+
 </header>
 
 <section id="about">
+
   <div class="section-header">
-    <div class="section-num"><strong>§ 01</strong> — About</div>
-    <h2 class="section-title">A practitioner becoming an <em>engineer</em> of supply chains.</h2>
+    <div class="section-num">
+      <strong>§ 01</strong> — About
+    </div>
+
+    <h2 class="section-title">
+      A practitioner becoming an <em>engineer</em> of supply chains.
+    </h2>
   </div>
+
   <div class="about-content">
+
     <div class="about-text">
-      <p>I started in the operations room — handling on-board courier shipments, calculating quotes under deadline pressure, and untangling customs clearance for clients who could not afford a delay. That experience taught me that supply chains are won at the seams: the moment a quote is sent, the hour a document is filed, the row in a spreadsheet that nobody updated.</p>
-      <p>At IMT Atlantique I am turning that operational instinct into something more rigorous — combinatorial optimisation, simulation, forecasting in R and Python, lean management. The goal is simple: keep the operator's eye for what matters, add the analyst's tools for proving it.</p>
-      <p>Today my focus sits at the intersection of <em>logistics, analytics, and automation</em>. Building things that take the boring work off humans so they can spend their time on what's actually hard.</p>
+
+      <p>
+        I started in the operations room — handling on-board courier shipments,
+        calculating quotes under deadline pressure, and untangling customs clearance
+        for clients who could not afford a delay. That experience taught me that
+        supply chains are won at the seams: the moment a quote is sent, the hour a
+        document is filed, the row in a spreadsheet that nobody updated.
+      </p>
+
+      <p>
+        At IMT Atlantique I developed that operational instinct through optimisation,
+        simulation, forecasting and data analysis in R and Python. I completed my
+        master's thesis in October 2026 on selecting airline carriers to reduce
+        freight costs while considering operational risk.
+      </p>
+
+      <p>
+        Today my focus sits at the intersection of
+        <em>logistics, analytics, and automation</em>.
+        Building things that take the boring work off humans so they can spend their
+        time on what's actually hard.
+      </p>
+
     </div>
+
     <div class="about-facts">
-      <div class="fact"><div class="fact-label">Currently</div><div class="fact-value">Intern, <em>Aerotrans</em> (India) — supply chain analytics & automation</div></div>
-      <div class="fact"><div class="fact-label">Next Chapter</div><div class="fact-value">Relocating to <em>Munich, Germany</em> in October 2026</div></div>
-      <div class="fact"><div class="fact-label">Seeking</div><div class="fact-value"><em>Logistics & Supply Chain roles</em> — freight forwarding, operations</div></div>
-      <div class="fact"><div class="fact-label">Based</div><div class="fact-value">Currently Chennai, India · Moving to Munich Oct 2026</div></div>
+
+      <div class="fact">
+        <div class="fact-label">Currently</div>
+        <div class="fact-value">
+          Completed internship at
+          <em>Aerotrans Global Forwarding</em>
+        </div>
+      </div>
+
+      <div class="fact">
+        <div class="fact-label">Education</div>
+        <div class="fact-value">
+          Master's completed at
+          <em>IMT Atlantique</em> · 2026
+        </div>
+      </div>
+
+      <div class="fact">
+        <div class="fact-label">Seeking</div>
+        <div class="fact-value">
+          <em>Logistics & Supply Chain roles</em>
+          — freight forwarding, pricing & operations
+        </div>
+      </div>
+
+      <div class="fact">
+        <div class="fact-label">Based</div>
+        <div class="fact-value">
+          Munich, Germany
+        </div>
+      </div>
+
     </div>
+
   </div>
 </section>
 
 <section id="experience">
+
   <div class="section-header">
-    <div class="section-num"><strong>§ 02</strong> — Experience</div>
-    <h2 class="section-title">Three roles. One <em>through-line</em>.</h2>
+    <div class="section-num">
+      <strong>§ 02</strong> — Experience
+    </div>
+
+    <h2 class="section-title">
+      Two roles. One <em>through-line</em>.
+    </h2>
   </div>
+
   <div class="experience-list">
+
     <article class="boarding-pass">
+
       <div class="bp-section">
-        <span class="label">Boarding · 003 — Current</span>
-        <div class="bp-role">Freight Forwarding Analyst Intern</div>
-        <div class="bp-company">Aerotrans</div>
-        <div class="bp-route"><span>FEB 2026</span><span class="arrow"></span><span>PRESENT</span></div>
+
+        <span class="label">
+          Boarding · 002 — Completed
+        </span>
+
+        <div class="bp-role">
+          Freight Forwarding Analyst Intern
+        </div>
+
+        <div class="bp-company">
+          Aerotrans Global Forwarding
+        </div>
+
+        <div class="bp-route">
+          <span>APR 2026</span>
+          <span class="arrow"></span>
+          <span>SEP 2026</span>
+        </div>
+
       </div>
+
       <div class="bp-section bp-details">
-        <span class="label">Mission Brief</span>
+
+        <span class="label">
+          Mission Brief
+        </span>
+
         <ul>
-          <li>Building automated data extraction pipelines from operational emails into Google Sheets using n8n and OpenAI</li>
-          <li>Developing Python-based cost analysis tooling for freight operations</li>
-          <li>Designing Power BI dashboards to surface KPIs across the operations team</li>
-          <li>Translating analyst outputs into decisions the ops floor can act on</li>
+
+          <li>
+            Supported air and sea freight pricing by reviewing carrier rates,
+            surcharges and shipment reports
+          </li>
+
+          <li>
+            Coordinated the rollout of Sidecar AI quotation software between the
+            pricing team and software vendor
+          </li>
+
+          <li>
+            Tracked more than 23 software issues and followed up on fixes through
+            weekly vendor meetings
+          </li>
+
+          <li>
+            Built Python cost-analysis tools and Power BI reports using shipment
+            data from 11 branches
+          </li>
+
+          <li>
+            Created an n8n workflow to extract purchase-order fields from emails
+            and record validated information in Google Sheets
+          </li>
+
         </ul>
+
       </div>
+
       <div class="bp-section bp-side">
-        <div><span class="label">Status</span><div class="bp-status">In progress</div></div>
-        <div><span class="label">Location</span><div style="font-family: var(--mono); font-size: 12px; margin-top: 4px;">CHENNAI, INDIA · ON-SITE</div><div class="bp-barcode"></div></div>
+
+        <div>
+          <span class="label">Status</span>
+          <div class="bp-status">
+            Completed
+          </div>
+        </div>
+
+        <div>
+          <span class="label">Location</span>
+
+          <div style="font-family: var(--mono); font-size: 12px; margin-top: 4px;">
+            CHENNAI · INDIA
+          </div>
+
+          <div class="bp-barcode"></div>
+        </div>
+
       </div>
+
     </article>
 
     <article class="boarding-pass">
+
       <div class="bp-section">
-        <span class="label">Boarding · 002</span>
-        <div class="bp-role">Operations Coordinator</div>
-        <div class="bp-company">Aero Chain Network</div>
-        <div class="bp-route"><span>MAR 2024</span><span class="arrow"></span><span>MAY 2025</span></div>
+
+        <span class="label">
+          Boarding · 001 — Completed
+        </span>
+
+        <div class="bp-role">
+          Operations Executive Intern
+        </div>
+
+        <div class="bp-company">
+          Esquire Express
+        </div>
+
+        <div class="bp-route">
+          <span>JAN 2023</span>
+          <span class="arrow"></span>
+          <span>FEB 2024</span>
+        </div>
+
       </div>
+
       <div class="bp-section bp-details">
-        <span class="label">Mission Brief</span>
+
+        <span class="label">
+          Mission Brief
+        </span>
+
         <ul>
-          <li>Issued 10+ competitive quotes per week for time-critical airfreight shipments</li>
-          <li>Worked closely with customs brokers to keep clearance friction low</li>
-          <li>Held key client relationships as the single point of contact through every shipment</li>
-          <li>Maintained meticulous documentation to keep deliveries on time and costs tight</li>
+
+          <li>
+            Coordinated more than 80 international shipments including NFO,
+            OBC and air cargo deliveries
+          </li>
+
+          <li>
+            Planned shipment routes around flight schedules and customs requirements
+          </li>
+
+          <li>
+            Developed a quotation tool to compare shipping options and prepare
+            customer quotes
+          </li>
+
+          <li>
+            Maintained shipment records and kept customers updated on delivery progress
+          </li>
+
         </ul>
+
       </div>
+
       <div class="bp-section bp-side">
-        <div><span class="label">Status</span><div class="bp-status">Closed</div></div>
-        <div><span class="label">Location</span><div style="font-family: var(--mono); font-size: 12px; margin-top: 4px;">CHENNAI · INDIA</div><div class="bp-barcode"></div></div>
+
+        <div>
+          <span class="label">Status</span>
+          <div class="bp-status">
+            Completed
+          </div>
+        </div>
+
+        <div>
+
+          <span class="label">Location</span>
+
+          <div style="font-family: var(--mono); font-size: 12px; margin-top: 4px;">
+            CHENNAI · INDIA
+          </div>
+
+          <div class="bp-barcode"></div>
+
+        </div>
+
       </div>
+
     </article>
 
-    <article class="boarding-pass">
-      <div class="bp-section">
-        <span class="label">Boarding · 001</span>
-        <div class="bp-role">Operations Executive Intern</div>
-        <div class="bp-company">Esquire Express</div>
-        <div class="bp-route"><span>JAN 2023</span><span class="arrow"></span><span>FEB 2024</span></div>
-      </div>
-      <div class="bp-section bp-details">
-        <span class="label">Mission Brief</span>
-        <ul>
-          <li>Coordinated 80+ international airfreight shipments end-to-end</li>
-          <li>Planned efficient routing and transport solutions around customs and airport constraints</li>
-          <li>Built a rapid-quote system that cut client response time materially</li>
-          <li>Maintained transport master data to keep operations running cleanly</li>
-        </ul>
-      </div>
-      <div class="bp-section bp-side">
-        <div><span class="label">Status</span><div class="bp-status">Closed</div></div>
-        <div><span class="label">Location</span><div style="font-family: var(--mono); font-size: 12px; margin-top: 4px;">CHENNAI · INDIA</div><div class="bp-barcode"></div></div>
-      </div>
-    </article>
   </div>
+
 </section>
 
 <section id="thesis" style="padding: 0; max-width: none;">
+
 <div style="max-width: 1400px; margin: 0 auto; padding: 0 48px;">
+
 <div class="thesis">
+
   <div class="thesis-grid">
+
     <div>
-      <div class="thesis-meta">§ 03 — Master's Thesis · 2026</div>
-      <h2 class="thesis-title">Automating the <em>operations stack</em>: data pipelines & analytics for an air-cargo company.</h2>
-      <div class="thesis-host">Host · <strong>Aerotrans</strong> — France<br>Programme · IMT Atlantique</div>
+
+      <div class="thesis-meta">
+        § 03 — Master's Thesis · Passed October 2026
+      </div>
+
+      <h2 class="thesis-title">
+        Optimizing <em>Airline Carrier Selection</em>
+        for Freight Cost Reduction.
+      </h2>
+
+      <div class="thesis-host">
+        Research ·
+        <strong>IMT Atlantique &amp; Aerotrans Global Forwarding</strong>
+        <br>
+        Result · Passed October 2026
+      </div>
+
     </div>
+
     <div class="thesis-missions">
+
       <div class="mission">
-        <div class="mission-num">i.</div>
-        <div><div class="mission-title">Cost analysis in Python</div><div class="mission-desc">Modelling freight cost structure across lanes, modes and partners — turning unstructured operational data into a defensible cost picture.</div></div>
+
+        <div class="mission-num">
+          i.
+        </div>
+
+        <div>
+
+          <div class="mission-title">
+            Carrier selection model
+          </div>
+
+          <div class="mission-desc">
+            Built a Python model comparing freight cost and operational risk
+            across 15 international routes and 10 airlines.
+          </div>
+
+        </div>
+
       </div>
+
       <div class="mission">
-        <div class="mission-num">ii.</div>
-        <div><div class="mission-title">Power BI operations dashboard</div><div class="mission-desc">A single pane of glass for the ops team — KPIs, exceptions, lane performance, refreshed automatically on top of the data pipeline.</div></div>
+
+        <div class="mission-num">
+          ii.
+        </div>
+
+        <div>
+
+          <div class="mission-title">
+            Optimisation &amp; simulation
+          </div>
+
+          <div class="mission-desc">
+            Used linear programming and simulation to evaluate how changing
+            costs and operating conditions affect airline carrier selection.
+          </div>
+
+        </div>
+
       </div>
+
       <div class="mission">
-        <div class="mission-num">iii.</div>
-        <div><div class="mission-title">Automated data ingestion</div><div class="mission-desc">An n8n + LLM pipeline that reads inbound emails, extracts purchase-order fields, validates them, and writes clean rows into the analysis layer — no copy-paste in the loop.</div></div>
+
+        <div class="mission-num">
+          iii.
+        </div>
+
+        <div>
+
+          <div class="mission-title">
+            Estimated savings: 28.5%
+          </div>
+
+          <div class="mission-desc">
+            Modelled potential savings of approximately USD 1.05 million
+            against 2024 spend. These are model estimates, not realised savings.
+            Results were communicated through Power BI reports.
+          </div>
+
+        </div>
+
       </div>
+
     </div>
+
   </div>
+
 </div>
+
 </div>
+
 </section>
 
 <section id="projects">
+
   <div class="section-header">
-    <div class="section-num"><strong>§ 04</strong> — Selected Projects</div>
-    <h2 class="section-title">Things I've <em>actually built</em>.</h2>
+
+    <div class="section-num">
+      <strong>§ 04</strong> — Selected Projects
+    </div>
+
+    <h2 class="section-title">
+      Things I've <em>actually built</em>.
+    </h2>
+
   </div>
+
   <div class="projects-grid">
+
     <article class="project featured">
-      <div class="project-num">01</div>
-      <div class="project-tag">Chrome Extension · Production</div>
-      <h3 class="project-title"><em>HaulyDesk</em> — air freight compliance toolkit</h3>
-      <p class="project-desc">A Chrome extension built for air freight forwarders to handle pre-shipment checks and quick reference lookups directly from the browser. Replaces the need to juggle IATA manuals, government portals, and spreadsheets. Features dangerous goods classification, route compliance, HSN code lookup, and day-to-day air cargo decisions at your fingertips.</p>
-      <div class="project-stack"><span>Vanilla JavaScript</span><span>Chrome Manifest V3</span><span>HTML/CSS</span><span>Air Cargo Reference</span></div>
+
+      <div class="project-num">
+        01
+      </div>
+
+      <div class="project-tag">
+        Browser Extension · Project
+      </div>
+
+      <h3 class="project-title">
+        <em>HaulyDesk</em> — air freight compliance toolkit
+      </h3>
+
+      <p class="project-desc">
+        A Chrome extension built for air freight forwarders to handle
+        pre-shipment checks and quick reference lookups directly from the browser.
+        Features dangerous goods classification, routing information,
+        HSN code lookup and practical air cargo reference information.
+      </p>
+
+      <div class="project-stack">
+        <span>Vanilla JavaScript</span>
+        <span>Chrome Manifest V3</span>
+        <span>HTML/CSS</span>
+        <span>Air Cargo Reference</span>
+      </div>
+
     </article>
 
     <article class="project featured">
-      <div class="project-num">02</div>
-      <div class="project-tag">Chrome Extension · Production</div>
-      <h3 class="project-title"><em>Shiplyzer</em> — ocean freight reference suite</h3>
-      <p class="project-desc">A comprehensive container-and-logistics reference tool built as a Chrome extension for ocean freight professionals. Includes: Container Matcher (cargo dimensions → ranked container recommendations), ICD/CFS Finder for India (nearest depot locations with distances), Incoterms 2020 guide, container spec library, unit converter, and optional AI recommendations powered by OpenAI. Haversine-based distance calculations over 40+ ICDs and 80+ Indian cities.</p>
-      <div class="project-stack"><span>JavaScript</span><span>Chrome Extension</span><span>Haversine Algorithm</span><span>OpenAI API</span><span>HTML/CSS</span><span>Logistics Data</span></div>
+
+      <div class="project-num">
+        02
+      </div>
+
+      <div class="project-tag">
+        Browser Extension · Project
+      </div>
+
+      <h3 class="project-title">
+        <em>Shiplyzer</em> — ocean freight reference suite
+      </h3>
+
+      <p class="project-desc">
+        A container and logistics reference tool built as a Chrome extension
+        for ocean freight professionals. Includes container specifications,
+        cargo dimension matching, an Incoterms 2020 reference and an Indian
+        inland container depot finder.
+      </p>
+
+      <div class="project-stack">
+        <span>JavaScript</span>
+        <span>Chrome Extension</span>
+        <span>Haversine Algorithm</span>
+        <span>HTML/CSS</span>
+        <span>Logistics Data</span>
+      </div>
+
     </article>
 
     <article class="project featured">
-      <div class="project-num">03</div>
-      <div class="project-tag">Automation · Production</div>
-      <h3 class="project-title">Email-to-Sheet purchase order <em>extraction pipeline</em></h3>
-      <p class="project-desc">An n8n workflow that listens to the operations inbox, sends each purchase order through GPT for structured extraction (supplier, PO number, line items, quantities, prices, dates), runs validation in JavaScript, and writes clean rows into Google Sheets. Replaces hours of manual copy-paste with a self-running pipeline — and feeds the cost analysis and BI layers downstream.</p>
-      <div class="project-stack"><span>n8n</span><span>OpenAI GPT</span><span>JavaScript</span><span>Gmail API</span><span>Google Sheets</span></div>
+
+      <div class="project-num">
+        03
+      </div>
+
+      <div class="project-tag">
+        Automation · Project
+      </div>
+
+      <h3 class="project-title">
+        Email-to-Sheet purchase order
+        <em>extraction pipeline</em>
+      </h3>
+
+      <p class="project-desc">
+        An n8n workflow that extracts selected purchase-order information
+        from operational emails, validates fields and records structured
+        information in Google Sheets to reduce manual data entry.
+      </p>
+
+      <div class="project-stack">
+        <span>n8n</span>
+        <span>JavaScript</span>
+        <span>Email Automation</span>
+        <span>Google Sheets</span>
+      </div>
+
     </article>
 
     <article class="project">
-      <div class="project-num">04</div>
-      <div class="project-tag">Automation</div>
-      <h3 class="project-title">Email-driven data ingestion workflow</h3>
-      <p class="project-desc">A lightweight automation that reads incoming operational emails, extracts the fields that matter, and pushes them straight into Google Sheets. The system that replaces "checking email and typing into Excel" with a workflow that just runs.</p>
-      <div class="project-stack"><span>n8n</span><span>Gmail</span><span>Google Sheets</span></div>
+
+      <div class="project-num">
+        04
+      </div>
+
+      <div class="project-tag">
+        Optimisation
+      </div>
+
+      <h3 class="project-title">
+        Variable Neighborhood Descent for the TSP
+      </h3>
+
+      <p class="project-desc">
+        Implementation of OrOpt, TwoOpt and ThreeOpt heuristics for the
+        Traveling Salesman Problem. Compared neighborhood orderings on
+        benchmark datasets and evaluated solution quality and runtime.
+      </p>
+
+      <div class="project-stack">
+        <span>Python</span>
+        <span>Combinatorial Optimisation</span>
+        <span>TSPLIB</span>
+      </div>
+
     </article>
 
     <article class="project">
-      <div class="project-num">05</div>
-      <div class="project-tag">Optimisation</div>
-      <h3 class="project-title">Variable Neighborhood Descent for the TSP</h3>
-      <p class="project-desc">Implementation of OrOpt, TwoOpt and ThreeOpt heuristics for the Traveling Salesman Problem. Compared six neighborhood orderings on TSPLIB instances (eil51, eil101, d198, kroA100, ch150). Reported solution quality and runtime, visualised through boxplots and bar charts.</p>
-      <div class="project-stack"><span>Python</span><span>Combinatorial Optimisation</span><span>TSPLIB</span></div>
+
+      <div class="project-num">
+        05
+      </div>
+
+      <div class="project-tag">
+        Data Analysis
+      </div>
+
+      <h3 class="project-title">
+        Flight delay analysis with R
+      </h3>
+
+      <p class="project-desc">
+        Analysed flight delays in R using exploratory analysis,
+        regression and visualisations to compare airline performance
+        and understand relationships between departure and arrival delays.
+      </p>
+
+      <div class="project-stack">
+        <span>R</span>
+        <span>ggplot2</span>
+        <span>Regression</span>
+      </div>
+
     </article>
 
-    <article class="project">
-      <div class="project-num">06</div>
-      <div class="project-tag">Data Analysis</div>
-      <h3 class="project-title">Flight delay analysis with R</h3>
-      <p class="project-desc">Exploratory and bivariate analysis on the nycflights13 dataset. Built a regression model linking departure and arrival delays, and assembled a ggplot2 dashboard for airline comparisons.</p>
-      <div class="project-stack"><span>R</span><span>ggplot2</span><span>Regression</span></div>
-    </article>
   </div>
+
 </section>
 
 <section id="skills">
+
   <div class="section-header">
-    <div class="section-num"><strong>§ 05</strong> — Skills</div>
-    <h2 class="section-title">The <em>toolkit</em>.</h2>
+
+    <div class="section-num">
+      <strong>§ 05</strong> — Skills
+    </div>
+
+    <h2 class="section-title">
+      The <em>toolkit</em>.
+    </h2>
+
   </div>
+
   <div class="skills-grid">
+
     <div class="skill-group">
-      <h3>Logistics & Operations</h3>
+
+      <h3>
+        Logistics & Operations
+      </h3>
+
       <ul class="skill-list">
-        <li>Time-critical airfreight <span class="level">Expert</span></li>
-        <li>On-board courier (OBC) <span class="level">Expert</span></li>
-        <li>Quoting & pricing <span class="level">Advanced</span></li>
-        <li>Customs clearance <span class="level">Advanced</span></li>
-        <li>Transport management <span class="level">Advanced</span></li>
-        <li>Inventory management <span class="level">Intermediate</span></li>
+
+        <li>
+          Air & sea freight pricing
+          <span class="level">Advanced</span>
+        </li>
+
+        <li>
+          Time-critical airfreight
+          <span class="level">Advanced</span>
+        </li>
+
+        <li>
+          On-board courier (OBC)
+          <span class="level">Advanced</span>
+        </li>
+
+        <li>
+          Quotations
+          <span class="level">Advanced</span>
+        </li>
+
+        <li>
+          Shipment documentation
+          <span class="level">Advanced</span>
+        </li>
+
+        <li>
+          Customs coordination
+          <span class="level">Advanced</span>
+        </li>
+
       </ul>
+
     </div>
+
     <div class="skill-group">
-      <h3>Data & Analysis</h3>
+
+      <h3>
+        Data & Analysis
+      </h3>
+
       <ul class="skill-list">
-        <li>Python <span class="level">Advanced</span></li>
-        <li>R <span class="level">Advanced</span></li>
-        <li>Power BI <span class="level">Advanced</span></li>
-        <li>MS Excel <span class="level">Advanced</span></li>
-        <li>Forecasting (ARIMA, ETS) <span class="level">Intermediate</span></li>
-        <li>AnyLogic / Petri nets <span class="level">Intermediate</span></li>
+
+        <li>
+          Python
+          <span class="level">Advanced</span>
+        </li>
+
+        <li>
+          pandas
+          <span class="level">Advanced</span>
+        </li>
+
+        <li>
+          Power BI
+          <span class="level">Advanced</span>
+        </li>
+
+        <li>
+          MS Excel
+          <span class="level">Advanced</span>
+        </li>
+
+        <li>
+          R
+          <span class="level">Intermediate</span>
+        </li>
+
+        <li>
+          Linear programming
+          <span class="level">Intermediate</span>
+        </li>
+
       </ul>
+
     </div>
+
     <div class="skill-group">
-      <h3>Automation</h3>
+
+      <h3>
+        Automation
+      </h3>
+
       <ul class="skill-list">
-        <li>n8n workflows <span class="level">Advanced</span></li>
-        <li>OpenAI / LLM APIs <span class="level">Advanced</span></li>
-        <li>Gmail / Sheets API <span class="level">Advanced</span></li>
-        <li>JavaScript (in-flow) <span class="level">Intermediate</span></li>
-        <li>HTTP / webhook design <span class="level">Intermediate</span></li>
-        <li>Process automation design <span class="level">Advanced</span></li>
+
+        <li>
+          n8n workflows
+          <span class="level">Advanced</span>
+        </li>
+
+        <li>
+          Email data extraction
+          <span class="level">Advanced</span>
+        </li>
+
+        <li>
+          Google Sheets integration
+          <span class="level">Advanced</span>
+        </li>
+
+        <li>
+          JavaScript
+          <span class="level">Intermediate</span>
+        </li>
+
+        <li>
+          Process automation
+          <span class="level">Advanced</span>
+        </li>
+
       </ul>
+
     </div>
+
   </div>
+
   <div class="languages">
-    <div class="lang-card"><div class="lang-flag">★ NATIVE</div><div class="lang-name">Tamil</div><div class="lang-level">Mother tongue</div></div>
-    <div class="lang-card"><div class="lang-flag">EN</div><div class="lang-name">English</div><div class="lang-level">C1 — Proficient</div></div>
-    <div class="lang-card"><div class="lang-flag">FR</div><div class="lang-name">French</div><div class="lang-level">A1 — Elementary</div></div>
-    <div class="lang-card"><div class="lang-flag">DE</div><div class="lang-name">German</div><div class="lang-level">A1 — Elementary</div></div>
+
+    <div class="lang-card">
+      <div class="lang-flag">★ NATIVE</div>
+      <div class="lang-name">Tamil</div>
+      <div class="lang-level">Mother tongue</div>
+    </div>
+
+    <div class="lang-card">
+      <div class="lang-flag">EN</div>
+      <div class="lang-name">English</div>
+      <div class="lang-level">C1 — Proficient</div>
+    </div>
+
+    <div class="lang-card">
+      <div class="lang-flag">FR</div>
+      <div class="lang-name">French</div>
+      <div class="lang-level">A1 — Elementary</div>
+    </div>
+
+    <div class="lang-card">
+      <div class="lang-flag">DE</div>
+      <div class="lang-name">German</div>
+      <div class="lang-level">A1 — Elementary</div>
+    </div>
+
   </div>
+
 </section>
 
-<section id="contact" class="contact" style="padding: 120px 48px; max-width: none;">
+<section
+  id="contact"
+  class="contact"
+  style="padding: 120px 48px; max-width: none;"
+>
+
   <div class="contact-inner">
+
     <div>
-      <div class="section-num" style="margin-bottom: 24px;"><strong>§ 06</strong> — Contact</div>
-      <h2 class="contact-title">Let's build something <em>that runs.</em></h2>
+
+      <div
+        class="section-num"
+        style="margin-bottom: 24px;"
+      >
+        <strong>§ 06</strong> — Contact
+      </div>
+
+      <h2 class="contact-title">
+        Let's build something
+        <em>that runs.</em>
+      </h2>
+
     </div>
+
     <div class="contact-details">
-      <div class="contact-row"><div class="key">Email</div><div class="val"><a href="mailto:akakashraj07@gmail.com">akakashraj07@gmail.com</a></div></div>
-      <div class="contact-row"><div class="key">Phone</div><div class="val"><a href="tel:+33698932163">+33 698 93 21 63</a></div></div>
-      <div class="contact-row"><div class="key">LinkedIn</div><div class="val"><a href="#" target="_blank">Ahakash Augustin Raj</a></div></div>
-      <div class="contact-row"><div class="key">Based</div><div class="val">Chennai, India · Moving to Munich, Germany (October 2026)</div></div>
-      <div class="contact-row"><div class="key">Status</div><div class="val">Seeking logistics & supply chain roles in Munich from October 2026</div></div>
+
+      <div class="contact-row">
+
+        <div class="key">
+          Email
+        </div>
+
+        <div class="val">
+
+          <a href="mailto:akakashraj07@gmail.com">
+            akakashraj07@gmail.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="contact-row">
+
+        <div class="key">
+          Phone
+        </div>
+
+        <div class="val">
+
+          <a href="tel:+4915292638206">
+            +49 1529 2638206
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="contact-row">
+
+        <div class="key">
+          Based
+        </div>
+
+        <div class="val">
+          Munich, Germany
+        </div>
+
+      </div>
+
+      <div class="contact-row">
+
+        <div class="key">
+          Status
+        </div>
+
+        <div class="val">
+          Open to freight forwarding, pricing, operations and logistics analytics roles
+        </div>
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
 <footer>
-  <div>© 2026 Ahakash Augustin Raj — Chennai, India</div>
-  <div>Designed & coded by Ahakash Augustin Raj · Portfolio Vol. 01</div>
+
+  <div>
+    © 2026 Ahakash Augustin Raj — Munich, Germany
+  </div>
+
+  <div>
+    Designed & coded by Ahakash Augustin Raj · Portfolio Vol. 01
+  </div>
+
 </footer>
 
 <script>
+
 const observer = new IntersectionObserver((entries) => {
+
   entries.forEach(entry => {
+
     if (entry.isIntersecting) {
+
       entry.target.style.opacity = '1';
+
       entry.target.style.transform = 'translateY(0)';
+
     }
+
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
-document.querySelectorAll('section, .boarding-pass, .project').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(32px)';
-  el.style.transition = 'opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1)';
-  observer.observe(el);
+
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -80px 0px'
 });
-const stamp = document.querySelector('.stamp');
-if (stamp) {
-  document.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 4;
-    const y = (e.clientY / window.innerHeight - 0.5) * 4;
-    stamp.style.transform = `rotate(${-12 + x}deg) translate(${x}px, ${y}px)`;
+
+
+document
+  .querySelectorAll('section, .boarding-pass, .project')
+  .forEach(el => {
+
+    el.style.opacity = '0';
+
+    el.style.transform = 'translateY(32px)';
+
+    el.style.transition =
+      'opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1)';
+
+    observer.observe(el);
+
   });
+
+
+const stamp = document.querySelector('.stamp');
+
+
+if (stamp) {
+
+  document.addEventListener('mousemove', (e) => {
+
+    const x =
+      (e.clientX / window.innerWidth - 0.5) * 4;
+
+    const y =
+      (e.clientY / window.innerHeight - 0.5) * 4;
+
+    stamp.style.transform =
+      `rotate(${-12 + x}deg) translate(${x}px, ${y}px)`;
+
+  });
+
 }
+
 </script>
 
 </body>
 </html>
+```
